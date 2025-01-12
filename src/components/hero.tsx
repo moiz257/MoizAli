@@ -26,20 +26,20 @@ const itemVariants = {
 const Hero: React.FC = () => {
   return (
     <motion.div
-      className="flex flex-col md:flex-row justify-between items-center gap-7 p-6 md:p-14"
+      className="flex flex-col max-w-7xl mx-auto justify-between items-center gap-7 p-6 md:flex-row md:gap-10"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       {/* Left Content */}
-      <motion.div className="md:w-1/2 mb-8 md:mb-0 text-left p-3" variants={itemVariants}>
+      <motion.div className="max-w-screen-xl mx-auto mb-8 md:mb-0 text-left p-3" variants={itemVariants}>
         <motion.h2 className="text-sm font-[700] text-white/90" variants={itemVariants}>
           AVAILABLE FOR WORK
         </motion.h2>
-        <motion.h1 className="text-5xl w-full md:text-7xl font-[500]  mt-5 tracking-tighter " variants={itemVariants}>
+        <motion.h1 className="text-5xl md:text-7xl font-[500] mt-5 tracking-tighter" variants={itemVariants}>
           A WEBSITE DESIGNER FROM PAKISTAN
         </motion.h1>
-        <motion.p className="mt-3 text-base md:text-lg font-semibold text-white/60 w-full md:w-[550px]" variants={itemVariants}>
+        <motion.p className="mt-3 text-base md:text-lg font-semibold text-white/60" variants={itemVariants}>
           My journey into web design started with a love for both art and technology, which led me to pursue a career where I could blend these interests seamlessly.
         </motion.p>
         <motion.div variants={itemVariants}>
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
 
       {/* Right Content */}
       <motion.div
-        className="w-full flex justify-center items-center" 
+        className="w-full flex justify-center items-center mt-8 md:mt-0"
         variants={itemVariants}
       >
         <motion.div
@@ -65,10 +65,10 @@ const Hero: React.FC = () => {
           <Image
             src={Moiz}
             alt="Image"
-            className="w-[100%] md:w-[80%] lg:w-[600px] h-auto mx-auto"
+            className=" h-auto mx-auto"
             width={900}
             height={900}
-            priority 
+            priority
           />
         </motion.div>
       </motion.div>

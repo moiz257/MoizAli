@@ -81,7 +81,7 @@ const imageVariant = {
 
 const MyWork = () => {
   return (
-    <div className="w-full bg-black text-white py-10 px-6">
+    <div className="max-w-7xl mx-auto bg-black text-white py-10 px-6">
       {/* Top Section */}
       <motion.div
         className="flex flex-col items-center mb-10"
@@ -91,7 +91,7 @@ const MyWork = () => {
       >
         <motion.h2 className="text-sm tracking-widest">WORKS</motion.h2>
         <motion.h1
-          className="text-5xl font-bold text-start w-[88vw] mt-4"
+          className="text-5xl font-bold text-center sm:text-left w-full mt-4 px-4 md:px-0"
           variants={headingVariant}
         >
           EXPLORE THE PROJECTS BELOW TO SEE HOW I BRING IDEAS TO LIFE THROUGH
@@ -99,8 +99,8 @@ const MyWork = () => {
         </motion.h1>
       </motion.div>
 
-      {/* Desktop View */}
-      <div className="hidden md:grid md:grid-cols-3 gap-10">
+      {/* Responsive Grid View */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <Link href={project.link} key={index} passHref>
             <motion.div
@@ -120,50 +120,15 @@ const MyWork = () => {
                 />
               </motion.div>
               <motion.div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h2 className="text-4xl font-bold">{project.title}</h2>
+                <h2 className="text-3xl font-bold">{project.title}</h2>
               </motion.div>
-              <div className="absolute bottom-5 left-5">
+              <div className="absolute bottom-5 left-5 mb-5">
                 <span className="text-white border border-white/40 px-3 py-1 rounded-full text-sm">
                   {project.description}
                 </span>
               </div>
-              <div className="absolute bottom-5 right-5 text-lg font-semibold">
+              <div className="absolute bottom-5 right-5 text-lg font-semibold mb-5">
                 {project.year}
-              </div>
-            </motion.div>
-          </Link>
-        ))}
-      </div>
-
-      {/* Mobile View */}
-      <div className="md:hidden flex flex-col gap-6">
-        {projects.map((project, index) => (
-          <Link href={project.link} key={index} passHref>
-            <motion.div
-              className="w-full relative group overflow-hidden"
-              variants={imageVariant}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-            >
-              <motion.div className="w-full h-96 relative">
-                <Image
-                  src={project.imgSrc}
-                  alt={project.title}
-                  objectFit="cover"
-                  className="transition-transform duration-500"
-                  width={700}
-                  height={700}
-                />
-              </motion.div>
-              <motion.div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h2 className="text-3xl font-bold">{project.title}</h2>
-              </motion.div>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-white border border-white px-3 py-1 rounded-full text-sm">
-                  {project.description}
-                </span>
-                <span className="text-lg font-semibold">{project.year}</span>
               </div>
             </motion.div>
           </Link>
